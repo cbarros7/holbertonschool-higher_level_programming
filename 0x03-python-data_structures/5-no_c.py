@@ -2,6 +2,5 @@
 
 
 def no_c(my_string):
-    new = list(my_string)
-    new = ''.join(char for char in my_string if char not in 'Cc')
-    return new
+    my_string = ''.join(char for char in my_string if char not in 'Cc')
+    return my_string
