@@ -1,4 +1,4 @@
-# 0x00. PYTHON - DATA STRUCTURES: LISTS, TUPLES - HOLBERTON SCHOOL :robot:
+# 0x03. PYTHON - DATA STRUCTURES: LISTS, TUPLES - HOLBERTON SCHOOL :robot:
 
 ## Description :speech_balloon:
 Higher-level programming projects for Holberton School Year 1 
