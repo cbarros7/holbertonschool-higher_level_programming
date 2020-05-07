@@ -1,4 +1,4 @@
-# 0x00. PYTHON - DATA STRUCTURES: LISTS, TUPLES - HOLBERTON SCHOOL :robot:
+# 0x04. PYTHON - MORE DATA STRUCTURES: SET, DICTIONARY :robot:
 
 ## Description :speech_balloon:
 This data structure project with dictionaries, you learn to use methods like:  `lambda`, `map`, `filter`, and `reduce`.
