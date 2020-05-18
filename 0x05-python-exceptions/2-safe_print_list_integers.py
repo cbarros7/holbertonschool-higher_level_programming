@@ -6,7 +6,7 @@ def safe_print_list_integers(my_list=[], x=0):
         length += 1
     for j in range(x):
         try:
-            print("{}".format(int(my_list[j])), end="")
+            print("{:d}".format(my_list[j]), end="")
             count += 1
         except (ValueError, TypeError):
             pass
