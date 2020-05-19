@@ -32,7 +32,7 @@ class Square(object):
 
     @position.setter
     def position(self, value):
-        if value[0] and value[1] < 0:
+        if self.__position < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -42,13 +42,14 @@ class Square(object):
 
     def my_print(self):
         """Print vector with # and spaces"""
-        if self.__size == 0:
-            print("\n")
-        for k in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            for space in range(self.__position[0]):
-                print(" ", end="")
-            for j in range(self.__size):
+        if self.__size > 0:
+            for k in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for space in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
                     print("#", end="")
+                print("")
+        else:
             print("")
