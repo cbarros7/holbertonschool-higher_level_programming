@@ -48,6 +48,7 @@ class Square(object):
         """Print vector with # and spaces"""
         if self.__size == 0:
             print("")
+            return
 
         [print("") for i in range(0, self.__position[1])]
         for i in range(0, self.__size):
