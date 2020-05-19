@@ -49,13 +49,14 @@ class Square(object):
 
     def my_print(self):
         """Print vector with # and spaces"""
-        if self.__size == 0:
-            print("")
-        for k in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            for space in range(self.__position[0]):
-                print(" ", end="")
-            for j in range(self.__size):
-                print("#", end="")
+        if self.__size > 0:
+            for k in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for space in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
+        else:
             print()
