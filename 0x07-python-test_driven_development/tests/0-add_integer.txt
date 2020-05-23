@@ -60,6 +60,11 @@ If the function only receives one parameter it will be added to this number
     >>> add_integer(2)
     100
 
+If the function receives as parameter float('inf')
+
+::
+    >>> add_integer(float('inf'))
+    89
 
 Types of errors
 =====

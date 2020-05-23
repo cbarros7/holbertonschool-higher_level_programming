@@ -51,6 +51,17 @@ The matrix can be composed of several lists, as long as they are of the same len
     >>> print(matrix_divided(matrix, 7.8))
     [[0.64, 8.08, 0.0], [0.77, 0.38, 7.18], [1.03, 2.95, 0.64], [2.69, 6.92, 0.77]]
 
+Matrix divide float('inf')
+
+::
+    >>> matrix = [
+    ...     [5, 63, 0],
+    ...     [6, 3, 56],
+    ...     [8, 23, 5],
+    ...     [21, 54, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, float('inf')))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 
 Types of errors
@@ -77,6 +88,17 @@ The matrix must be proportional, otherwise it shows error
     Traceback (most recent call last):
     TypeError: Each row of the matrix must have the same size
 
+Matrix string 
+
+::
+    >>> matrix = [
+    ...     [5, 63, 12],
+    ...     [6, 3, 56]
+    ... ]
+    >>> print(matrix_divided(matrix, "hello"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
 
 The function does not accept string values
 
@@ -90,3 +112,14 @@ The function does not accept string values
     >>> print(matrix_divided(matrix, 7.8))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Missing one paramater 
+
+::
+    >>> matrix = [
+    ...     [5, 63, 12],
+    ...     [6, 3, 56]
+    ... ]
+    >>> print(matrix_divided(" ", ))
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
