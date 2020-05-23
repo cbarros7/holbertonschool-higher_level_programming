@@ -9,6 +9,12 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """Define unittests for max_integer([..])."""
+
+    def test_uniq_list(self):
+        """Define uniq element list"""
+        uniq_list = [7]
+        self.assertEqual(max_integer(uniq_list), 7)
+
     def test_ordered_list(self):
         """Define ordered list"""
         ordered_list = [1, 2, 3, 4]
