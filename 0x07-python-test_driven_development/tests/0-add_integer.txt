@@ -63,11 +63,8 @@ If the function only receives one parameter it will be added to this number
 If the function receives as parameter float('inf')
 
 ::
-    >>> add_integer(float('inf'))
-    89
-
-    >>> add_integer(-float('inf'))
-    89
+    >>> add_integer(5443443443.6645434)
+    5443443541
 
 Types of errors
 =====
@@ -105,6 +102,6 @@ If both parameters are neither integer nor float the error will be the following
 Cannot convert float NaN to integer
 
  ::
-    >>> add_integer(float('nan'))
+    >>> add_integer(float('NaN'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
