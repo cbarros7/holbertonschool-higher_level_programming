@@ -60,9 +60,6 @@ If the function only receives one parameter it will be added to this number
     >>> add_integer(2)
     100
 
-If the function receives as parameter float('inf')
-
-::
     >>> add_integer(5443443443.6645434)
     5443443541
 
@@ -105,3 +102,15 @@ Cannot convert float NaN to integer
     >>> add_integer(float('NaN'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
+
+
+If the function receives as parameter float('inf')
+
+::
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(-float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
