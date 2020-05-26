@@ -64,12 +64,11 @@ class Rectangle(object):
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.__height)
-
     def __str__(self):
         """ string representation of square """
         string = ""
         if self.__height == 0 or self.__width == 0:
-            return string
+            return ""
         wide = "#" * self.width
         for i in range(self.height - 1):
             string += wide + "\n"
