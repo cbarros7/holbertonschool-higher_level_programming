@@ -70,15 +70,15 @@ class Rectangle(object):
 
     def __str__(self):
         """Print the rectangle with the character #"""
-        rectangle = []
-        if (self.__height or self.__width) == 0:
+        rectangle = ""
+        if self.__height == 0 or self.__width == 0:
             return rectangle
         for i in range(self.__height):
-            for i in range(self.__width):
-                rectangle.append('#')
-            rectangle.append('\n')
-        x = ''.join(rectangle)
-        return x[:-1]
+            for j in range(self.__width):
+                rectangle += '#'
+            rectangle += "\n"
+        rectangle = rectangle[:-1]
+        return rectangle
 
     def __repr__(self):
         """String representation of the rectangle"""
