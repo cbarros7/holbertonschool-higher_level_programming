@@ -63,16 +63,16 @@ class Rectangle(object):
         """Define perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return ((2 * self.__width) + (2 * self.__height))
+        return (2 * self.__width) + (2 * self.__height)
 
     def __str__(self):
         """ string representation of square """
         string = ""
         if self.__height == 0 or self.__width == 0:
             return string
-        for y in range(self.__height):
-            for x in range(self.__width):
-                string += "#"
-            string += "\n"
-        string = string[:-1]
-        return string
+        rect = []
+        for i in range(self.__height):
+            [rect.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
