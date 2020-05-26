@@ -66,13 +66,13 @@ class Rectangle(object):
         return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
-        """Print the rectangle with the character #"""
-        rectangle = ""
+        """ string representation of square """
+        string = ""
         if self.__height == 0 or self.__width == 0:
-            return rectangle
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rectangle += "#"
-            rectangle += "\n"
-        rectangle = rectangle[:-1]
-        return rectangle
+            return string
+        for y in range(self.__height):
+            for x in range(self.__width):
+                string += "#"
+            string += "\n"
+        string = string[:-1]
+        return string
