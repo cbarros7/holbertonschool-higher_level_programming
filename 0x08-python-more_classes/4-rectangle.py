@@ -67,14 +67,13 @@ class Rectangle(object):
 
     def __str__(self):
         """ string representation of square """
-        string = ""
-        if self.__height == 0 or self.__width == 0:
-            return string
-        wide = "#" * self.width
-        for i in range(self.height - 1):
-            string += wide + "\n"
-        string += wide
-        return str(string)
+        string = []
+        for i in range(self.__height):
+            for i in range(self.__width):
+                string.append('#')
+            string.append('\n')
+        x = ''.join(string)
+        return x[:-1]
 
     def __repr__(self):
         """String representation of the rectangle"""
