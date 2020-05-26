@@ -10,19 +10,28 @@
 class Rectangle(object):
     """Rectangle: Define new class"""
     def __init__(self, width=0, height=0):
-        """ initializes the width and height """
+        """Initialize new class rectangle
+
+        Args:
+            width (int): width for the new rectangle
+            height (int): height for the new rectangle
+        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """ gets the width """
+        """Property for attribute width."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ sets the width """
-        if type(value) is not int:
+        """Set values to width
+
+        Args:
+            value (int): new value for width
+        """
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -30,36 +39,39 @@ class Rectangle(object):
 
     @property
     def height(self):
-        """ gets the height """
+        """Property for attribute height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ sets the height """
-        if type(value) is not int:
+        """Set values to height
+
+        Args:
+            value (int): new value for height
+        """
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
-        """ method to find the area of a rectangle """
-        return self.__height * self.__width
+        """Define area"""
+        return self.__width * self.__height
 
     def perimeter(self):
-        """ method to find the perimeter of a rectangle """
-        if self.__height == 0 or self.__width == 0:
+        """Define perimeter"""
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__height * 2) + (self.__width * 2)
+        return (2 * self.__width) + (2 * self.__height)
 
     def __str__(self):
         """ string representation of square """
         string = ""
         if self.__height == 0 or self.__width == 0:
-            return string
-        for y in range(self.__height):
-            for x in range(self.__width):
-                string += "#"
-            string += "\n"
-        string = string[:-1]
-        return string
+            return ""
+        wide = "#" * self.width
+        for i in range(self.height - 1):
+            string += wide + "\n"
+        string += wide
+        return str(string)
