@@ -61,9 +61,9 @@ class Rectangle(object):
 
     def perimeter(self):
         """Define perimeter"""
-        if (self.__width or self.__height) != 0:
-            return ((2 * self.__width) + (2 * self.__height))
-        return 0
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
         """Print the rectangle with the character #"""
