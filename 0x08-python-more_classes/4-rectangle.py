@@ -63,7 +63,7 @@ class Rectangle(object):
         """Define perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return ((2 * self.__width) + (2 * self.__height))
+        return 2 * (self.__height + self.__width)
 
     def __str__(self):
         """ string representation of square """
@@ -77,4 +77,4 @@ class Rectangle(object):
 
     def __repr__(self):
         """String representation of the rectangle"""
-        return ("Rectangle ({}, {})".format(self.width, self.height))
+        return "Rectangle ({}, {})".format(str(self.width), str(self.height))
