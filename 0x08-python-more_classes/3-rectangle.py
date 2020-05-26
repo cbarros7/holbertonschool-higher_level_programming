@@ -72,7 +72,7 @@ class Rectangle(object):
             return rectangle
         for i in range(self.__height):
             for j in range(self.__width):
-                rectangle += '#'
+                rectangle += "#"
             rectangle += "\n"
         rectangle = rectangle[:-1]
         return rectangle
