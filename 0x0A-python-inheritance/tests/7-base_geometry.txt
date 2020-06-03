@@ -52,6 +52,11 @@ Handle error
     >>> print(bg.integer_validator("my_int", 1.2))
     Traceback (most recent call last):
     TypeError: my_int must be an integer
+    
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", "hello"))
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
 
     >>> bg = BaseGeometry()
     >>> print(bg.integer_validator())

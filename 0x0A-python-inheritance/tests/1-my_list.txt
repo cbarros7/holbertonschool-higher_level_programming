@@ -64,6 +64,23 @@ Fractional number
     >>> my_list.print_sorted()
     []
 
+
+    >>> my_list.append(7)
+    >>> my_list.append(5)
+    >>> my_list.append(3)
+    >>> print(my_list)
+    [7, 5, 3]
+
+    >>> my_list.print_sorted()
+    [3, 5, 7]
+
+    >>> print(my_list)
+    [7, 5, 3]
+
+    >>> my_list.append(-7)
+    >>> my_list.print_sorted()
+    [-7, 3, 5, 7]
+
 ================================
 Handle errors
 ================================
