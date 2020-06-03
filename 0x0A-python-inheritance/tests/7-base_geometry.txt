@@ -1,0 +1,59 @@
+# 7-base_geometry.txt
+# Carlos Barros <1543@holbertonschool.com>
+
+===========================
+How to Use 7-base_geometry.py
+===========================
+
+This module defines an function divides all elements of a matrix ``def integer_validator(self, name, value)``.
+
+Usage
+=====
+
+``base_geometry(...)```  validates value
+---------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", 12))
+    None
+
+
+===============
+Handle error 
+================
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", None))
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+    >>> bg = BaseGeometry()
+    >>> print(type(bg))
+    <class '7-base_geometry.BaseGeometry'>
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.area())
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator(3))
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", -12))
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", 1.2))
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator())
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'

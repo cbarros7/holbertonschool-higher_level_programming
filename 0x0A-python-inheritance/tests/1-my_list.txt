@@ -1,0 +1,98 @@
+# 1-my_list.txt
+# Carlos Barros <1543@holbertonschool.com>
+
+===========================
+How to Use 1-my_list.py
+===========================
+
+This module defines an function divides all elements of a matrix ``matrix_divided(matrix, div)``.
+
+Usage
+=====
+
+``print_sorted:(...)``` prints the list, but sorted (ascending sort)
+---------------------
+
+>>> MyList = __import__('1-my_list').MyList
+
+Float number  
+
+::
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5.0)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5.0]
+
+Negative number  
+
+::
+
+>>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(4)
+    >>> my_list.append(-2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [-2, -1, 3, 4, 5]
+
+Fractional number  
+
+::
+
+>>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(4)
+    >>> my_list.append(2/8)
+    >>> my_list.append(3/4)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [-1, 0.25, 0.75, 4, 5]
+
+>>> my_list = MyList()
+    >>> my_list.append("Hello")
+    >>> my_list.append("Holberton")
+    >>> my_list.append("Food")
+    >>> my_list.print_sorted()
+    ['Food', 'Hello', 'Holberton']
+
+>>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+================================
+Handle errors
+================================
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(None)
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append("d")
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'
+
+    
+>>> my_list = MyList()
+    >>> my_list.append("Hello")
+    >>> my_list.append(5)
+    >>> my_list.append("Food")
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'int' and 'str'
