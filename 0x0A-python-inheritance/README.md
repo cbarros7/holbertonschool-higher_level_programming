@@ -115,7 +115,7 @@ Prototypes for functions written in this project:
     <width>/<height>`.
 
 
-    ## Quick start :runner:
+## Quick start :runner:
 Git clone the repository:
 
 ```
