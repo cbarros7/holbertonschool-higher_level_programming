@@ -1,29 +1,29 @@
 #!/usr/bin/python3
 # 7-base_geometry.py
 # Carlos Barros <1543@holbertonschool.com>
-""" File name : 7-base_geometry.py
-    It is not allowed to import any module
+"""Represent BaseGeometry class
 """
 
 
 class BaseGeometry:
-    """Class BaseGeometry"""
+    """Represent BaseGeometry"""
     def area(self):
-        """Raises an Exception - method not implemented"""
-
+        """Represent area
+        Raises:
+            Exception: [area() is not implemented]
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates a given value is a positive int
-        Param:
-            name: name of variable to validate
-            value: value to validate
+        """Validates value
+        Arguments:
+            name {str} -- name of an instance
+            value {int} -- type of instance
         Raises:
-            TypeError: if value is not an int
-            ValueError: if value is negative
+            TypeError: [must be an integer]
+            ValueError: [must be greater than 0]
         """
-
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be greater than 0". format(name))
+            raise ValueError("{} must be greater than 0".format(name))
