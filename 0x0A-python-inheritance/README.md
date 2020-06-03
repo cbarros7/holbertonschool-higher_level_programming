@@ -22,8 +22,8 @@ issubclass, type and super built-in functions.
 
 * [tests](./tests): Folder of test files. Includes both Holberton-provided ones
 as well as the following two independently-developed:
-    * [1-my_list.txt](./1-my_list.txt)
-    * [7-base_geometry.txt](./7-base_geometry.txt)
+    * [1-my_list.txt](./tests/1-my_list.txt)
+    * [7-base_geometry.txt](./tests/7-base_geometry.txt)
 
 ## Function Prototypes :floppy_disk:
 
@@ -115,7 +115,7 @@ Prototypes for functions written in this project:
     <width>/<height>`.
 
 
-    ## Quick start :runner:
+## Quick start :runner:
 Git clone the repository:
 
 ```
