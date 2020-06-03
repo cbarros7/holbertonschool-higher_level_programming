@@ -10,6 +10,10 @@ Rectangle = __import__('9-rectangle').Rectangle
 class Square(Rectangle):
     """Square -- Multiple inheritance"""
     def __init__(self, size):
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+        """
         self.integer_validator("my_int", size)
         super().__init__(size, size)
         self.__size = size
