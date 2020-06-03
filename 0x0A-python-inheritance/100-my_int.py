@@ -9,10 +9,10 @@
 class MyInt(int):
     """ my int class"""
 
-    def __equal__(self, value):
-        """ equals """
-        return False
+    def __eq__(self, value):
+        """Override == opeartor with != behavior."""
+        return self.real != value
 
-    def __notequal__(self, value):
-        """ not equal """
-        return True
+    def __ne__(self, value):
+        """Override != operator with == behavior."""
+        return self.real == value
