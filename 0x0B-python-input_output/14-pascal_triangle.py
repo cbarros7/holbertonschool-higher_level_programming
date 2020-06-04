@@ -6,13 +6,14 @@
 
 
 def pascal_triangle(n):
-    """pascal_triangle 
+    """pascal_triangle
 
     Args:
-        n (int): number 
+        n (int): number
 
     Returns:
-        [list]: list of lists of integers representing the Pascal’s triangle of n
+        [list]: list of lists of integers representing
+        the Pascal’s triangle of n
     """
     if n <= 0:
         return ""
