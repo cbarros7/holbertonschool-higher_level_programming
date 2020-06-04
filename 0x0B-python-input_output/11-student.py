@@ -3,7 +3,6 @@
 # Carlos Barros <1543@holbertonschool.com>
 """ File name : 11-student.py
 """
-import json
 
 
 class Student(object):
@@ -20,6 +19,6 @@ class Student(object):
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
+    def to_json(self):
         """retrieves a dictionary represt """
         return self.__dict__

@@ -3,7 +3,6 @@
 # Carlos Barros <1543@holbertonschool.com>
 """ File name : 10-class_to_json.py
 """
-import json
 
 
 def class_to_json(obj):
@@ -12,4 +11,4 @@ def class_to_json(obj):
     Args:
         obj : any object for example list, dict
     """
-    return(json.dumps(obj.__dict__))
+    return obj.__dict__
