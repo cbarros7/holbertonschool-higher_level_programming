@@ -4,6 +4,7 @@
 """Defines unittests for base.py."""
 import unittest
 import os
+import json
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -273,6 +274,28 @@ class TestBase_from_json_string(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.from_json_string([], 1)
 
+    def test_load_from_file(self):
+        """Test load_from_file with non-existant file"""
+        obj = Base.load_from_file()
+        self.assertEqual(obj, [])
+
+    def test_from_json_string_none(self):
+        """Test from_json_string with None"""
+        self.assertEqual(Base.from_json_string(None), '[]')
+
+    def test_to_json_string_empty(self):
+        """Test inherited test_to_json_string() with empty list and None"""
+        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string(None), '[]')
+
+    def test_save_to_file_none(self):
+        """Test save_to_file() with None"""
+        Base.save_to_file(None)
+        with open("Base.json", "r") as f:
+            bases = json.load(f)
+            self.assertEqual(len(bases), 0)
+            self.assertEqual(bases, [])
+
 
 class TestBase_create(unittest.TestCase):
     """Unittests for testing create method of Base class."""
@@ -324,7 +347,6 @@ class TestBase_create(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
-
 
 if __name__ == "__main__":
     unittest.main()
