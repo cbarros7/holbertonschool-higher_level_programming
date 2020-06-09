@@ -28,7 +28,7 @@ class TestSquare_instantiation(unittest.TestCase):
         s2 = Square(2, 7)
         s3 = Square(10, 2, 16)
         self.assertEqual(s1.id, s3.id - 2)
-    
+
     def test_4_values(self):
         s1 = Square(1, 2)
         s2 = Square(2, 7)
@@ -41,49 +41,49 @@ class TestSquare_instantiation(unittest.TestCase):
 
     def test_id_str(self):
         self.assertEqual("Holberton", Square(1, 2, 6, "Holberton").id)
-    
+
     def test_size_getter(self):
         self.assertEqual(6, Square(6, 2, 3, 9).size)
 
     def test_size_getter_1(self):
         s = Square(6, 2, 3, 9)
-        s.update(size = 43)
+        s.update(size=43)
         self.assertEqual(43, s.size)
-    
+
     def test_x_getter(self):
         self.assertEqual(2, Square(6, 2, 3, 9).x)
 
     def test_x_getter_1(self):
         s = Square(6, 2, 3, 9)
-        s.update(x = 23)
+        s.update(x=23)
         self.assertEqual(23, s.x)
-    
+
     def test_y_getter(self):
         self.assertEqual(3, Square(6, 2, 3, 9).y)
-    
+
     def test_y_getter_1(self):
         s = Square(6, 2, 3, 9)
-        s.update(y = 57)
+        s.update(y=57)
         self.assertEqual(57, s.y)
-    
+
     def test_zero_x_y(self):
         s = Square(1)
         self.assertTrue(s.y == 0 and s.x == 0)
 
     def test_zero_x_y(self):
         s = Square(1, 5, 6, 0)
-        self.assertTrue(s.y == 6 and s.x == 5 
-                        and s.id == 0 and s.size == 1)
+        self.assertTrue(s.y == 6 and s.x == 5 and
+                        s.id == 0 and s.size == 1)
 
     def test_zero_x_y(self):
         s = Square(75, 54, 32, -52)
         self.assertTrue(s.id == -52)
-            
+
     def test_update_all(self):
         s = Square(6, 2, 3, 9)
-        s.update(y = 57, id = 4, x = 79, size = 76)
-        self.assertTrue(s.x == 79 and s.id == 4 and 
-                         s.y == 57 and s.size == 76)
+        s.update(y=57, id=4, x=79, size=76)
+        self.assertTrue(s.x == 79 and s.id == 4 and
+                        s.y == 57 and s.size == 76)
 
     def test_none_size(self):
         with self.assertRaises(TypeError):
@@ -92,11 +92,11 @@ class TestSquare_instantiation(unittest.TestCase):
     def test_y_id(self):
         with self.assertRaises(TypeError):
             Square(10, 2, "Hello", 5)
-    
+
     def test_float_all(self):
         with self.assertRaises(TypeError):
             Square(3.0, 5.0, 4.0, 62.0)
-    
+
     def test_six_arg(self):
         with self.assertRaises(TypeError):
             Square(10, 2, 16, 4, 4, "Holberton")
@@ -108,11 +108,11 @@ class TestSquare_size(unittest.TestCase):
     def test_size_none(self):
         with self.assertRaises(TypeError):
             Square(None)
-    
+
     def test_size_none_2(self):
         with self.assertRaises(TypeError):
             Square(None, 6, 7)
-    
+
     def test_size_float(self):
         with self.assertRaises(TypeError):
             Square(5.0, 32, 63, 554.0)
@@ -120,11 +120,11 @@ class TestSquare_size(unittest.TestCase):
     def test_size_n(self):
         with self.assertRaises(ValueError):
             Square(-75, 52, 53, 543)
-    
+
     def test_size_string(self):
         with self.assertRaises(TypeError):
             Square("Hello", 52, 53, 543)
-    
+
     def test_size_zero(self):
         with self.assertRaises(ValueError):
             Square(0, 52, 53, 543)
@@ -136,7 +136,7 @@ class TestSquare_size(unittest.TestCase):
     def test_size_float_nan(self):
         with self.assertRaises(TypeError):
             Square(float('nan'), 52, 53, 543)
-    
+
     def test_size_complex(self):
         with self.assertRaises(TypeError):
             Square(complex(5), 52, 53, 543)
@@ -147,12 +147,12 @@ class TestSquare_x(unittest.TestCase):
 
     def test_x_none(self):
         with self.assertRaises(TypeError):
-            Square(x = None)
-    
+            Square(x=None)
+
     def test_x_none_2(self):
         with self.assertRaises(TypeError):
             Square(4, None, 7)
-    
+
     def test_x_float(self):
         with self.assertRaises(TypeError):
             Square(5, 32.43, 63)
@@ -160,7 +160,7 @@ class TestSquare_x(unittest.TestCase):
     def test_x_n(self):
         with self.assertRaises(ValueError):
             Square(75, -52, 53, 543)
-    
+
     def test_x_string(self):
         with self.assertRaises(TypeError):
             Square(4, "Betty", 53, 543)
@@ -172,7 +172,7 @@ class TestSquare_x(unittest.TestCase):
     def test_x_float_nan(self):
         with self.assertRaises(TypeError):
             Square(97, float('nan'), 53, 543)
-    
+
     def test_x_complex(self):
         with self.assertRaises(TypeError):
             Square(5, complex(5), 53, 543)
@@ -183,12 +183,12 @@ class TestSquare_y(unittest.TestCase):
 
     def test_y_none(self):
         with self.assertRaises(TypeError):
-            Square(y = None)
-    
+            Square(y=None)
+
     def test_y_none_2(self):
         with self.assertRaises(TypeError):
             Square(4, 5, None, 7)
-    
+
     def test_y_float(self):
         with self.assertRaises(TypeError):
             Square(5, 4, 32.43, 4)
@@ -196,7 +196,7 @@ class TestSquare_y(unittest.TestCase):
     def test_y_n(self):
         with self.assertRaises(ValueError):
             Square(75, 54, -52, 543)
-    
+
     def test_y_string(self):
         with self.assertRaises(TypeError):
             Square(4, 6, "Betty", 543)
@@ -208,7 +208,7 @@ class TestSquare_y(unittest.TestCase):
     def test_y_float_nan(self):
         with self.assertRaises(TypeError):
             Square(97, 51, float('nan'), 543)
-    
+
     def test_y_complex(self):
         with self.assertRaises(TypeError):
             Square(5, 75, complex(5), 543)
@@ -219,8 +219,8 @@ class TestSquare_id(unittest.TestCase):
 
     def test_id_none(self):
         with self.assertRaises(TypeError):
-            Square(id = None)
-    
+            Square(id=None)
+
     def test_id_float(self):
         s = Square(5, 4, 5, 32.43)
         self.assertEqual(32.43, s.id)
@@ -228,11 +228,11 @@ class TestSquare_id(unittest.TestCase):
     def test_id_n(self):
         s = Square(75, 54, 32, -52)
         self.assertEqual(-52, s.id)
-    
+
     def test_id_float_inf(self):
         s = Square(4, 36, 434, float('inf'))
         self.assertEqual(float('inf'), s.id)
-    
+
     def test_id_complex(self):
         s = Square(5, 75, 434, complex(5))
         self.assertEqual(complex(5), s.id)
@@ -278,7 +278,7 @@ class TestSquare_area(unittest.TestCase):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
             s.area(1)
-    
+
     def test_area_one_complex_arg(self):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
@@ -288,11 +288,12 @@ class TestSquare_area(unittest.TestCase):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
             s.area(complex(41), 5)
-    
+
     def test_area_one_complex_arg_2(self):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
             s.area(4, "Holberton")
+
 
 class TestSquare_stdout(unittest.TestCase):
     """Unittests for testing __str__ and display methods of Square class."""
@@ -388,10 +389,10 @@ class TestSquare_update_args(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         s.update(13)
         self.assertEqual("[Square] (13) 10/10 - 10", str(s))
-    
+
     def test_update_x_arg(self):
         s = Square(10, 3, 10, 10)
-        s.update(x = 13)
+        s.update(x=13)
         self.assertEqual("[Square] (10) 13/10 - 10", str(s))
 
     def test_update_y_arg(self):
@@ -400,7 +401,7 @@ class TestSquare_update_args(unittest.TestCase):
         s.y = 53
         s.update(5)
         self.assertEqual("[Square] (5) 10/53 - 10", str(s))
-    
+
     def test_update_args_two(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
@@ -498,6 +499,7 @@ class TestSquare_update_args(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             s.update(89, 1, "invalid", "invalid")
+
 
 class TestSquare_update_kwargs(unittest.TestCase):
     """Unittests for testing update kwargs method of Square class."""
