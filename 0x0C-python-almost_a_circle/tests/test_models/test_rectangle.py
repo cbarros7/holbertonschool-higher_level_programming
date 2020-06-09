@@ -5,6 +5,7 @@
 import unittest
 import io
 import sys
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -701,6 +702,47 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+    def test_check_y_TypeError_02(self):
+        """Test TypeError for y in Rectangle"""
+        self.assertRaisesRegex(
+            TypeError,
+            'y must be an integer',
+            Rectangle,
+            4, 2, 0, [1, 2, 3, 4], 12
+        )
+
+    def test_check_y_TypeError_(self):
+        """Test TypeError for y in Rect"""
+        self.assertRaisesRegex(
+            ValueError,
+            'y must be >= 0',
+            Rectangle,
+            4, 2, 0, -6, 12
+        )
+
+    def test_update(self):
+        """update test"""
+        output = StringIO()
+        sys.stdout = output
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        r1.update(89, 2)
+        r1.update(89, 2, 3)
+        r1.update(89, 2, 3, 4)
+        r1.update(89, 2, 3, 4, 5)
+        print(r1)
+        sys.stdout = sys.__stdout__
+        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
+
+    def test_update_extra(self):
+        """update with etra parameters"""
+        output = StringIO()
+        sys.stdout = output
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5, 6, 7)
+        print(r1)
+        sys.stdout = sys.__stdout__
+        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
 
 
 if __name__ == "__main__":
