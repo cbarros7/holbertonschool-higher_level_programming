@@ -164,9 +164,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Dictionary with values for rectangle"""
-        return {"id": self.id, "width": self.width,
-                "height": self.height, "x": self.x,
-                "y": self.y}
+        return {"y": self.y, "x": self.x, "id": self.id,
+                "width": self.width, "height": self.height}
 
     def __str__(self):
         """__str__ print information for rectangle
