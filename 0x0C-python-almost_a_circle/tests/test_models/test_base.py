@@ -349,7 +349,7 @@ class TestBase_create(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
-        
+
     def test_load_from_file(self):
         """Test load_from_file method"""
 

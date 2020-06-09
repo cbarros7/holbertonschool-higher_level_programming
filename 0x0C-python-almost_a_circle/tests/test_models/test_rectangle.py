@@ -728,7 +728,6 @@ class TestRectangle_to_dictionary(unittest.TestCase):
             'string', 2, 0, 0, 12
         )
 
-
     def test_check_width_TypeError_02(self):
         """Test TypeError for width in Rectangle"""
         self.assertRaisesRegex(
