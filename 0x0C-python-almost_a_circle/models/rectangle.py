@@ -45,6 +45,16 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        """__str__ print information for rectangle
+
+        Returns:
+            [str]: [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
+
     @property
     def width(self):
         """Getter value for width"""
@@ -148,9 +158,8 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 if k == "id":
                     if v is None:
-                        super().__init__(self.width,
-                                         self.height, self.x,
-                                         self.y)
+                        super().__init__(self.width, self.height,
+                                         self.x, self.y)
                     else:
                         self.id = v
                 elif k == "width":
@@ -164,15 +173,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Dictionary with values for rectangle"""
-        return {"y": self.y, "x": self.x, "id": self.id,
-                "width": self.width, "height": self.height}
-
-    def __str__(self):
-        """__str__ print information for rectangle
-
-        Returns:
-            [str]: [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        """
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x,
-                                                       self.y, self.width,
-                                                       self.height)
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
