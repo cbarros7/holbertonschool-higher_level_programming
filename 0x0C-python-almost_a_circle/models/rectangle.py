@@ -23,6 +23,7 @@ class Rectangle(Base):
             id ([type], optional): Defaults to None.
         """
 
+
         self.width = width
         self.height = height
         self.x = x
@@ -45,55 +46,73 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, width):
-        """Setter value for width"""
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = width
+    def width(self, value):
+        self.integer_validator("width", value)
+        self.__width = value
 
     @property
     def height(self):
-        """Getter value for height"""
+        """Property height: height of rectangle
+        setter validates value is an integer > 0
+        Parameter:
+            value: value of the width
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is <= 0
+        """
         return self.__height
 
     @height.setter
-    def height(self, height):
-        """Setter value for height"""
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = height
+    def height(self, value):
+        self.integer_validator("height", value)
+        self.__height = value
 
     @property
     def x(self):
-        """Getter value for x"""
+        """Property x: x position of rectangle
+        setter validates value is an integer >= 0
+        Parameter:
+            value: value of the width
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is < 0
+        """
         return self.__x
 
     @x.setter
-    def x(self, x):
-        """Setter value for x"""
-        if type(x) is not int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = x
+    def x(self, value):
+        self.integer_validator("x", value)
+        self.__x = value
 
     @property
     def y(self):
-        """Getter value for y"""
+        """Property y: y position of rectangle
+        setter validates value is an integer >= 0
+        Parameter:
+            value: value of the width
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is < 0
+        """
         return self.__y
 
     @y.setter
-    def y(self, y):
-        """Setter value for y"""
-        if type(y) is not int:
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = y
+    def y(self, value):
+        self.integer_validator("y", value)
+        self.__y = value
+
+    def integer_validator(self, name, value):
+        """Validates a given value is a postive int
+        Parameters:
+            name: name of variable to validate
+            value: value to validate
+        """
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if (name == "width" or name == "height") and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        if (name == "x" or name == "y") and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
         """area: area rectangle
