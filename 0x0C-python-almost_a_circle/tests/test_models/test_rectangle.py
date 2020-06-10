@@ -70,7 +70,7 @@ class TestRectangle_instantiation(unittest.TestCase):
             Rectangle(True, 1)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(2, "Hello")
-            Rectangle(True, 2)
+            Rectangle(True, "g")
             Rectangle(6, "2")
 
     def test_value_error(self):
