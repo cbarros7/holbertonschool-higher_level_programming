@@ -60,6 +60,10 @@ class TestRectangle_instantiation(unittest.TestCase):
         r7 = Rectangle(1, 11, 1, 1, "Holberton")
         self.assertEqual(r7.id, "Holberton")
 
+    def str_two_arg(self):
+        r = Rectangle(0, 2)
+        self.assertTrue(r.size == 2)
+
     def one_arg(self):
         """checks for valid error"""
         with self.assertRaises(TypeError):
@@ -69,6 +73,18 @@ class TestRectangle_instantiation(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(7, None)
             Rectangle(None, 6)
+
+    def str_two_arg(self):
+        with self.assertRaises(TypeError):
+            Rectangle(10, "4")
+
+    def str_zero_arg(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def str_zero_arg(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
 
     def str_arg(self):
         with self.assertRaises(TypeError):

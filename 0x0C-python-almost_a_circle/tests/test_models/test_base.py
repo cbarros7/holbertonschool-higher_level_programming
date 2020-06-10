@@ -263,10 +263,10 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual(list_input, list_output)
 
     def test_from_json_string_None(self):
-        self.assertEqual('[]', Base.from_json_string(None))
+        self.assertEqual([], Base.from_json_string(None))
 
     def test_from_json_string_empty_list(self):
-        self.assertEqual('[]', Base.from_json_string("[]"))
+        self.assertEqual([], Base.from_json_string("[]"))
 
     def test_from_json_string_no_args(self):
         with self.assertRaises(TypeError):
@@ -283,7 +283,7 @@ class TestBase_from_json_string(unittest.TestCase):
 
     def test_from_json_string_none(self):
         """Test from_json_string with None"""
-        self.assertEqual(Base.from_json_string(None), '[]')
+        self.assertEqual(Base.from_json_string(None), [])
 
     def test_to_json_string_empty(self):
         """Test inherited test_to_json_string() with empty list and None"""
