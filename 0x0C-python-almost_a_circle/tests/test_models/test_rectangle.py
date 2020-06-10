@@ -60,6 +60,30 @@ class TestRectangle_instantiation(unittest.TestCase):
         r7 = Rectangle(1, 11, 1, 1, "Holberton")
         self.assertEqual(r7.id, "Holberton")
 
+    def test_type_error(self):
+        """
+        Test for check Type Error
+        """
+        Base._Base__nb_objects = 0
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("Hello", 2)
+            Rectangle(True, 1)
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, "Hello")
+            Rectangle(2, True)
+            Rectangle(6, "2")
+
+    def test_value_error(self):
+        """
+        Test for checking value error
+        """
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-3, 2)
+            Rectangle(0, 1)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(3, -2)
+            Rectangle(1, 0)
+
     def one_arg(self):
         """checks for valid error"""
         with self.assertRaises(TypeError):
