@@ -1,4 +1,4 @@
 #!/bin/bash/env mysql
 -- Create databases
-CREATE DATABASES IF NOT EXISTS hbtn_0c_0;
+CREATE DATABASES IF EXISTS hbtn_0c_0;
 
