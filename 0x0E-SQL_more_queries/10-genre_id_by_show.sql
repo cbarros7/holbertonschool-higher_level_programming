@@ -1,7 +1,7 @@
 -- Genre ID by show
-SELECT s.title, g.genre_id
-FROM tv_shows s
-INNER JOIN tv_show_genres g 
-ON s.id = g.genre_id 
-ORDER BY s.title ASC, g.genre_id ASC;
- 
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows
+JOIN tv_show_genres 
+ON tv_shows.id = tv_show_genres.show_id 
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
+
