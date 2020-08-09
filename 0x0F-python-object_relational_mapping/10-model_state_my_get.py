@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     # Query
     query = session.query(State).\
-        filter(State.name.like("%%%s%%" % sys.argv[4])).first()
+        filter(State.name == "{}".format(sys.argv[4], )).first()
 
     # Conditions
     if sys.argv[4] not in list_state:
