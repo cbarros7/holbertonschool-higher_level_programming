@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
+"""Definition of a State and an instance Base
+"""
 Base = declarative_base()
 
 
