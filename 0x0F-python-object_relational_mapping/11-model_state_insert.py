@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     # Query
     query = session.query(State).\
-        filter(State.name == "Louisiana").first()
+        order_by(State.id.desc()).first()
 
     # Print query
     print("{}".format(query.id))
