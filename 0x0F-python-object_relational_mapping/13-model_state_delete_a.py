@@ -26,7 +26,7 @@ if __name__ == "__main__":
         filter(State.name.like('%a%')).all()
     for delete_record in record:
         session.delete(delete_record)
-    
+
     session.commit()
 
     # Close session
