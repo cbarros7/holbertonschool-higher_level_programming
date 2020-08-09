@@ -24,8 +24,9 @@ if __name__ == "__main__":
     # Update record
     record = session.query(State).\
         filter(State.name.like('%a%')).all()
-    session.delete(record)
-    session.commit()
+    for delete_record in record:
+        session.delete(delete_record)
+        session.commit()
 
     # Close session
     session.close()
