@@ -13,13 +13,15 @@ if __name__ == "__main__":
                            charset="utf8")
     # Start cursor
     cur = conn.cursor()
+
     # Query
     cur.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
 
     # Print query
     for row in query_rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     # Close cursor
     cur.close()
