@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -s "$1" | wc -c
+curl --silent "$1" | wc -c
