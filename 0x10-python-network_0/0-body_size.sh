@@ -1,2 +1,3 @@
 #!/bin/bash
-curl --silent "$1" | wc -c
+# cURL body size
+curl -s "$1" | wc -c
