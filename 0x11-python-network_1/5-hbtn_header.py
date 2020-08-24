@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-""" Response header value"""
+"""Response header value"""
 import requests
 import sys
 
-if __name__ == "__main__":
-    print("{}".format(requests.get(sys.argv[1]).headers['X-Request-Id']))
+print("{}".format(requests.get(sys.argv[1]).headers['X-Request-Id']))
