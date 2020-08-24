@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Search API """
 import requests
-import json
 import sys
 
 if __name__ == "__main__":
@@ -17,6 +16,6 @@ if __name__ == "__main__":
                                    req.json().get('name')))
         else:
             print('No result')
-            
+
     except ValueError:
         print("Not a valid JSON")
