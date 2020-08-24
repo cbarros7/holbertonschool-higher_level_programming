@@ -1,0 +1,87 @@
+# Python - Network #1  :computer:
+[![Twitter Carlos](https://img.shields.io/twitter/follow/cbarros27?label=CarlosBarros&style=social)](https://twitter.com/cbarros27)
+
+This project involved learning how to use the `urllib` and `requests` Python
+libraries to send and receive HTTP messages to URL's.
+
+## Tasks :page_with_curl:
+
+* **0. What's my status? #0**
+  * [0-hbtn_status.py](./0-hbtn_status.py): Python script that fetches
+  `https://intranet.hbtn.io/status`.
+  * Uses `urllib`.
+
+* **1. Response header value #0**
+  * [1-hbtn_header.py](./1-hbtn_header.py): Python script that displays the
+  `X-Request-Id` response header variable of a request to a given URL.
+  * Usage: `./1-hbtn_header.py <URL>`
+	* Uses `urllib`.
+
+* **2. POST an email #0**
+  * [2-post_email.py](./2-post_email.py): Python script that sends a `POST`
+  request to a given URL with a given email, and displays the response body.
+  * Usage: `./2-post_email.py <URL> <email>`.
+	* Uses `urllib`.
+
+* **3. Error code #0**
+  * [3-error_code.py](./3-error_code.py): Python script sends a request to
+  a given URL and displays the response body.
+  * Handles HTTP errors.
+	* Uses `urllib`.
+
+* **4. What's my status? #1**
+  * [4-hbtn_status.py](./4-hbtn_status.py): Python script that fetches
+  `https://intranet.hbtn.io/status`.
+  * Uses `requests`.
+
+* **5. Response header value #1**
+  * [5-hbtn_header.py](./5-hbtn_header.py): Python script that displays the
+  `X-Request-Id` response header variable of a request to a given URL.
+  * Usage: `./5-hbtn_header.py <URL>`
+	* Uses `requests`.
+
+* **6. POST an email #1**
+  * [6-post_email.py](./6-post_email.py): Python script that sends a `POST`
+  request to a given URL with a given email, and displays the response body.
+  * Usage: `./6-post_email.py <URL> <email>`.
+	* Uses `requests`.
+
+* **7. Error code #1**
+  * [7-error_code.py](./7-error_code.py): Python script sends a request to
+  a given URL and displays the response body.
+  * Handles HTTP errors.
+	* Uses `requests`.
+
+* **8. Search API**
+  * [8-json_api.py](./8-json_api.py): Python script that sends a `POST` request
+  to `http://0.0.0.0:5000/search_user` with a letter passed as parameter.
+  * Usage: `./8-json_api.py <letter>`
+	* The letter is sent as the value of the variable `q`.
+	* If no letter is given, sets `q=""`.
+	* If the response body is properly formatted and non-empty, displays it as
+  `[<id>] <name>`.
+  * Uses `requests`.
+
+* **9. Star Wars API #0**
+  * [9-starwars.py](./9-starwars.py): Python script sends a search request to
+  the Star Wars API `people` endpoint with a given string.
+  * Usage: `./9-starwars.py <search string>`
+	* Displays the total number and `name` of each result.
+	* Uses `requests`.
+
+## Quick start :runner:
+Git clone the repository:
+
+```
+git clone https://github.com/cbarros7/holbertonschool-higher_level_programming.git
+```
+
+## Bugs :loudspeaker:
+No known bugs.
+
+
+## Authors :black_nib:
+**Carlos Barros** [Portfolio](https://carlosbarros.netlify.app/)
+                  [Github](https://github.com/cbarros7)
+                  [LinkdIn](https://www.linkedin.com/in/carlosbarros7/)
+                  [Tableau Public](https://public.tableau.com/profile/carlos.barros#!/?newProfile=&activeTab=0)
