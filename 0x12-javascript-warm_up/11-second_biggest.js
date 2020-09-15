@@ -1,10 +1,11 @@
 #!/usr/bin/node
 const lista = [];
 for (let i = 2; i < process.argv.length; i++) {
-  lista.push(process.argv[i]);
+  const number = parseInt(process.argv[i]);
+  lista.push(number);
 }
-if (process.argv.length < 3) {
+if (lista.length < 2) {
   console.log('0');
 } else {
-  console.log(Number(lista.sort().slice(-2)[0]));
+  console.log(lista.sort().slice(-2)[0]);
 }
