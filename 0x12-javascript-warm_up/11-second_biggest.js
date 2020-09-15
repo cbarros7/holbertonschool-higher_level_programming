@@ -1,10 +1,8 @@
 #!/usr/bin/node
-const lista = [];
-for (let i = 2; i < process.argv.length; i++) {
-  lista.push(process.argv[i]);
-}
 if (process.argv.length < 4) {
   console.log('0');
 } else {
-  console.log(lista.sort()[lista.length - 2]);
+  const data = process.argv.slice(2);
+  data.sort((a, b) => b - a);
+  console.log(data[1]);
 }
