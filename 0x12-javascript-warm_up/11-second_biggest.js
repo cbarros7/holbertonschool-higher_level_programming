@@ -4,7 +4,7 @@ for (let i = 2; i < process.argv.length; i++) {
   lista.push(process.argv[i]);
 }
 if (lista.length === 0 || lista.length === 1) {
-  console.log('0');
+  console.log(0);
 } else {
-  console.log(lista.sort().slice(-2)[0]);
+  console.log(Number(lista.sort().slice(-2)[0]));
 }
