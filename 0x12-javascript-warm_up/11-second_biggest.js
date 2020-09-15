@@ -3,8 +3,8 @@ const lista = [];
 for (let i = 2; i < process.argv.length; i++) {
   lista.push(process.argv[i]);
 }
-if (lista.length < 2) {
-  console.log(0);
+if (process.argv.length < 4) {
+  console.log('0');
 } else {
-  console.log(lista.sort().slice(-2)[0]);
+  console.log(lista.sort()[lista.length - 2]);
 }
