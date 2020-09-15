@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const lista = [];
+let lista = [];
 for (let i = 2; i < process.argv.length; i++) {
   lista.push(process.argv[i]);
 }
