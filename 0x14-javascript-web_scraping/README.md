@@ -2,6 +2,7 @@
 
 [![Twitter Carlos](https://img.shields.io/twitter/follow/cbarros27?label=CarlosBarros&style=social)](https://twitter.com/cbarros27)
 
+
 This project involved practicing file I/O on Node.js and using the NPM request
 framework to interact with the [Star Wars](https://swapi.co/),
 [JSONplaceholder](https://jsonplaceholder.typicode.com).
